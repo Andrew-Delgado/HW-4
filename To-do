@@ -1,0 +1,31 @@
+1. Modify homework 2 Server to check for a message every 200 seconds, with upd
+2. Modifty homework 2 Client to send a message every 60 seconds, upd
+3. The server will save the time received by the client.
+
+/*
+* This code print out the current time in hh:mm:ss, change it to just seconds.
+* This will allow us to check the differences in time at the server.
+* We need to send this time to the server
+*
+*/
+#include <iostream>
+#include <unistd.h>
+#include <stdio.h>
+#include <time.h>
+
+using namespace std;
+
+int main(){
+
+    int i = 0;
+
+    while (true) {
+        usleep(2000000);
+        // declaring argument of time() 
+        time_t my_time = time(NULL); 
+  
+        // ctime() used to give the present time 
+        printf("%s", ctime(&my_time));
+
+    }
+}
